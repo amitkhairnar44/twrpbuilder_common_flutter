@@ -16,8 +16,8 @@ class Portfolio extends StatefulWidget {
 
 class _PortfolioState extends State<Portfolio> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-  Color _color1 = Colors.grey[600];
-  Color _color2 = Colors.blue[300];
+  Color _color1 = Colors.blueGrey[800];
+  Color _color2 = Colors.blueGrey[400];
   Widget _selectedScreen = Home();
   @override
   Widget build(BuildContext context) {
@@ -25,14 +25,14 @@ class _PortfolioState extends State<Portfolio> {
       return AnimatedContainer(
         duration: Duration(seconds: 3),
         decoration: BoxDecoration(
-//            gradient: LinearGradient(colors: <Color>[
-//              _color1,
-//              _color2,
-//            ], begin: Alignment.topLeft, end: Alignment.bottomRight),
-            image: DecorationImage(
-          image: AssetImage('images/background.jpg'),
-          fit: BoxFit.cover,)
-        // TODO Disable background image as web support is still in alpha
+          gradient: LinearGradient(colors: <Color>[
+            _color1,
+            _color2,
+          ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+//            image: DecorationImage(
+//          image: AssetImage('images/background.jpg'),
+//          fit: BoxFit.cover,)
+          // TODO Disable background image as web support is still in alpha
         ),
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 50.0, sigmaY: 50.0),
@@ -91,8 +91,8 @@ class _PortfolioState extends State<Portfolio> {
                           onTap: () {
                             Navigator.of(context).pop();
                             setState(() {
-                              _color1 = Colors.grey;
-                              _color2 = Colors.blue[300];
+                              _color1 = Colors.blueGrey[800];
+                              _color2 = Colors.blueGrey[400];
                               _selectedScreen = Home();
                             });
                           },
@@ -182,8 +182,8 @@ class _PortfolioState extends State<Portfolio> {
           label: Text('Home'),
           onPressed: () {
             setState(() {
-              _color1 = Colors.grey;
-              _color2 = Colors.blue[300];
+              _color1 = Colors.blueGrey[800];
+              _color2 = Colors.blueGrey[400];
               _selectedScreen = Home();
             });
           },
@@ -196,7 +196,7 @@ class _PortfolioState extends State<Portfolio> {
           label: Text('Downloads'),
           onPressed: () {
             setState(() {
-              _color1 = Colors.black54;
+              _color1 = Colors.grey[600];
               _color2 = Colors.blueGrey;
               _selectedScreen = Downloads();
             });
